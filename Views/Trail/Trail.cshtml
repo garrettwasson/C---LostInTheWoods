@@ -1,0 +1,37 @@
+@foreach(var trail in ViewBag.SingleTrail)
+{
+    <h1 style="text-decoration: underline; font-style: italic;">@trail.Name</h1>
+    <div id="the_trail">
+        <h2 style="border: 2px solid black; padding: 10px;">Description</h2>
+        <h4 style="margin-left: 5px;">@trail.Description</h4>
+        <h2 style="border: 2px solid black; padding: 10px;">Trail Length</h2>
+        <h3 style="margin-left: 5px;">@trail.Length miles</h3>
+        <h2 style="border: 2px solid black; padding: 10px;">Elevation Change</h2>
+        <h3 style="margin-left: 5px;">@trail.Elevation feet</h3>
+        @if(@trail.Longitude > 0)
+        {
+            <h3 style="margin-left: 5px;">Longitude: @trail.Longitude &deg; E</h3>
+        }
+        @if(@trail.Longitude < 0)
+        {
+            <h3 style="margin-left: 5px;">Longitude: @trail.Longitude &deg; W</h3>
+        }
+        @if(@trail.Longitude == 0)
+        {
+            <h3 style="margin-left: 5px;">Longitude: @trail.Longitude &deg; Prime Meridian</h3>
+        }
+        @if(@trail.Latitude > 0)
+        {
+            <h3 style="margin-left: 5px;">Latitude: @trail.Latitude &deg; N</h3>
+        }
+        @if(@trail.Latitude < 0)
+        {
+            <h3 style="margin-left: 5px;">Latitude: @trail.Latitude &deg; S</h3>
+        }
+        @if(@trail.Latitude == 0)
+        {
+            <h3 style="margin-left: 5px;">Latitude: @trail.Latitude &deg; Prime Meridian</h3>
+        }
+    </div>
+    <a style="display: block; padding-top: 10px;" href="/">Return to Home Page</a>
+}

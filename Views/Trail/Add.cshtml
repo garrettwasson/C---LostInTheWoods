@@ -1,0 +1,20 @@
+@model Trail
+<h1 style="text-decoration: underline; font-style: italic;">Add a New Trail</h1>
+<div asp-validation-summary="All"></div>
+<form asp-action="AddTrail" asp-controller="Trail" method="post">
+    <label>Trail Name</label>
+    <input style="display: block; margin-bottom: 10px;" asp-for="Name" placeholder="Trail Name">
+    <label>Description</label>
+    <textarea style="display: block; margin-bottom: 10px;" asp-for="Description" cols="22" rows="3" placeholder="Description"></textarea>
+    <label>Trail Length</label>
+    <input style="display: block; margin-bottom: 10px;" asp-for="Length" placeholder="Trail Length (mi)">
+    <label>Elevation Change (ft)</label>
+    <input style="display: block; margin-bottom: 10px;" asp-for="Elevation" placeholder="Elevation Change (ft)">
+    <label>Longitude</label>
+    <input style="display: block; margin-bottom: 10px;" asp-for="Longitude" placeholder="Longitude">
+    <label>Latitude</label>
+    <input style="display: block; margin-bottom: 10px;" asp-for="Latitude" placeholder="Latitude">
+
+    <input style="display: block; margin-bottom: 10px;" type="submit" value="Create Record">
+</form>
+<a style="display: block; margin-top: 10px;" href="/">Return To Home Page</a>
